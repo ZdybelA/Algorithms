@@ -15,23 +15,14 @@ public class ListInsertionSort implements IInsertionSort<ListElement>, IAlgorith
     public void setup() {
         this.myList = new MyList();
         ListElement twenty = new ListElement(20);
-        for(int i=0; i<50; i++){
-            if(i!=20) {
-                myList.AddOrdered(new ListElement(new Random(System.nanoTime()).nextInt(30)));
-            }
-            else {
-                myList.Add(twenty);
-            }
-//            this.table[i] = new Random(System.nanoTime()).nextInt();
+        for (int i = 0; i < 450; i++) {
+            myList.AddOrdered(new ListElement(new Random(System.nanoTime()).nextInt(30)));
         }
-        myList.Remove(twenty);
-        ListElement iterator;
-        iterator = myList.getHead();
+        ListElement iterator = myList.getHead();
         do {
             System.out.println(iterator.getValue());
             iterator = iterator.next;
-        } while(iterator != myList.getHead());
-
+        } while (iterator != myList.getHead());
     }
 
     @Override

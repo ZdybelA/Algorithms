@@ -2,7 +2,8 @@ package com.azdybel.algs.Main;
 
 import com.azdybel.algs.Interfaces.IMyList;
 
-import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 
 public class MyList implements IMyList {
     private int size = 0;
@@ -57,22 +58,31 @@ public class MyList implements IMyList {
         //iterator = wstaw przed
         if (getSize() == 0) {
             this.setHead(listElement);
+            this.setLast(listElement);
             listElement.next = listElement;
             listElement.prev = listElement;
         } else {
             ListElement iterator = this.getHead();
-            do {
-                iterator = iterator.next;
-            } while (iterator != this.getHead()
-                    && (listElement.getValue() > iterator.getValue()));
-            //
+            if (listElement.getValue() <= iterator.getValue()) {
+                this.setHead(listElement);
+            } else {
+                AtomicBoolean isLast = new AtomicBoolean(false);
+                while (listElement.getValue() > iterator.getValue() && !isLast.get()) {
+                    iterator = iterator.next;
+                    if (iterator.equals(this.getHead())) {
+                        this.setLast(listElement);
+                        isLast.set(true);
+                    }
+                }
+            }
+
+
             listElement.prev = iterator.prev;
             listElement.next = iterator;
             listElement.prev.next = listElement;
             iterator.prev = listElement;
         }
         this.incSize();
-        this.setLast(listElement);
 
 
     }
