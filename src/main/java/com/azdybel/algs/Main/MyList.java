@@ -76,7 +76,6 @@ public class MyList implements IMyList {
                 }
             }
 
-
             listElement.prev = iterator.prev;
             listElement.next = iterator;
             listElement.prev.next = listElement;
