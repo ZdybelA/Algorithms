@@ -20,11 +20,16 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
     }
 
     @Override
-    public void InsertElementAt(int index, Integer elementToInsert) {
+    public void insertElementAt(int index, Integer elementToInsert) {
         //czy index istnieje w tablicy
         //0...length-1 => i-1 => 1...length
         //pętla, która stworzy przestrzeń dla naszego elementu
         //wstawiamy w wolne miejsce elementToInsert
+
+    }
+
+    @Override
+    public void sort() {
 
     }
 
