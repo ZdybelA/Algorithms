@@ -13,7 +13,7 @@ public class TimeMeasurementHelper {
             testAlgorithm.run();
         }
         float elapsedTime = System.nanoTime() - startTime;
-        if (useConsolePrint) System.out.printf("Algorithm took :\n %f secons", elapsedTime / Math.pow(10, 9));
+        if (useConsolePrint) System.out.printf("Algorithm took :\n %f seconds\n", elapsedTime / Math.pow(10, 9));
         return elapsedTime;
     }
 

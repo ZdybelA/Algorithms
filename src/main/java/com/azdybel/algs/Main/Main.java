@@ -1,11 +1,17 @@
 package com.azdybel.algs.Main;
-import com.azdybel.algs.Algs.QSort;
+
+import com.azdybel.algs.Helpers.Newton;
+import com.azdybel.algs.Helpers.TimeMeasurementHelper;
 
 public class Main {
     public static void main(String[] args) {
-        QSort qSort = new QSort();
-        qSort.setup();
-        qSort.run();
+        Newton n = new Newton();
+//        System.out.println(n.factorial(4000));
+
+
+//        System.out.println(n.nPoK(12, 7));
+        n.printNewtonTriangle(13);
+
     }
 
 }

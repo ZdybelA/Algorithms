@@ -38,8 +38,9 @@ public class QSort implements IQSort, IAlgorithmRunner {
     @Override
     public int partition(int[] tab, int start, int end) {
         int partitionPoint = choosePP(tab, start, end);
-        int i = start, j = end - 1;
+        int j = end - 1;
         swap(tab, partitionPoint, end);
+        int i = start;
         while (i != j) {
             while (tab[i] <= tab[end] && i < j) i++;
             while (tab[j] >= tab[end] && j > i) j--;
