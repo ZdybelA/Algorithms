@@ -1,17 +1,16 @@
 package com.azdybel.algs.Main;
 
-import com.azdybel.algs.Helpers.Newton;
-import com.azdybel.algs.Helpers.TimeMeasurementHelper;
+import com.azdybel.algs.Algs.BackpackProblem;
 
 public class Main {
     public static void main(String[] args) {
-        Newton n = new Newton();
-//        System.out.println(n.factorial(4000));
-
-
-//        System.out.println(n.nPoK(12, 7));
-        n.printNewtonTriangle(13);
+        BackpackProblem backpackProblem = new BackpackProblem();
+        backpackProblem.setup();
+        backpackProblem.solve();
+        System.out.println(backpackProblem.getMaxValue());
 
     }
 
 }
+
+//7 10 1 1 2 2 1 1 2 2 1 1 2 2 1 3 3 1 5 5 3 4
